@@ -4,6 +4,95 @@
 // const flights =
 //   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
+//Coding Challenge #1
+
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+//1. One player array for each team
+const players1 = [...game.players[0]];
+const players2 = [...game.players[1]];
+
+//2.Gk and field players
+
+const [gk, ...fieldPlayers] = players1;
+console.log(gk, fieldPlayers);
+
+//3. All Players Array
+
+const allPlayers = [...game.players[0], ...game.players[1]];
+console.log(allPlayers);
+
+//4. Bayern Final Roster
+
+const players1Final = [...game.players[0], 'Thiago', 'Coutinho', 'Perisic'];
+console.log(players1Final);
+
+//5.
+
+const {
+  odds: { team1, x: draw, team2 },
+} = game;
+console.log(team1, draw, team2);
+
+//6. printGoals
+
+const printGoals = function (...players) {
+  console.log(`${players.length} goals were scored`);
+};
+
+// printGoals('Davis', 'Muller', 'Lewandowski', 'Kimmich');
+// printGoals('Davis', 'Muller');
+printGoals(...game.scored);
+console.log(...game.scored);
+
+//7.
+
+team1 < team2 && console.log('Team 1 is more likely to win');
+team1 > team2 && console.log('Team 2 is more likely to win');
+
+// const winningTeam = game.odds.team1 && game.odds.team2;
+// console.log(winningTeam);
+
+/*
 // Data needed for first part of the section
 const restaurant = {
   name: 'Classico Italiano',
@@ -85,7 +174,7 @@ rest2.owner &&= '<ANONYMOUS>';
 console.log(rest1);
 console.log(rest2);
 
-/*
+
 ////////////////////////////////////////////////
 // The Nullish Coalescing Operator
 restaurant.numGuests = 0;
@@ -129,7 +218,7 @@ restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
 //Restructuring
 
 //Spread, because on the right side of =
-const arr = [1, 2, ...[3, 4]];
+// const arr = [1, 2, ...[3, 4]];
 
 //Rest, because on left side of =
 const [a, b, ...others] = [1, 2, 3, 4, 5];

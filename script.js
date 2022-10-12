@@ -3,9 +3,9 @@
 // Data needed for a later exercise
 // const flights =
 //   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
-
 //Coding Challenge #1
 
+/*
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -47,6 +47,10 @@ const game = {
   },
 };
 
+
+
+/*
+// Coding Challenge #!
 //1. One player array for each team
 const players1 = [...game.players[0]];
 const players2 = [...game.players[1]];
@@ -92,7 +96,7 @@ team1 > team2 && console.log('Team 2 is more likely to win');
 // const winningTeam = game.odds.team1 && game.odds.team2;
 // console.log(winningTeam);
 
-/*
+*/
 // Data needed for first part of the section
 const restaurant = {
   name: 'Classico Italiano',
@@ -142,6 +146,17 @@ const restaurant = {
   },
 };
 
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) console.log(item);
+
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+
+// console.log([...menu.entries()]);
+
+/*
 const rest1 = {
   name: 'Capri',
   // numGuests: 20,

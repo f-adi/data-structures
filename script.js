@@ -49,6 +49,38 @@ const restaurant = {
 };
 
 /*
+const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+
+console.log(ordersSet);
+
+console.log(new Set('Jonas'));
+
+console.log(ordersSet.size);
+console.log(ordersSet.has('Pizza'));
+console.log(ordersSet.has('Bread'));
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+ordersSet.delete('Risotto');
+// ordersSet.clear();
+console.log(ordersSet);
+
+for (const order of ordersSet) console.log(order);
+
+// Example
+
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+console.log(new Set(staff).size);
+console.log(new Set('fadibaaklini').size);
+/*
 // Property Names
 const properties = Object.keys(openingHours);
 console.log(properties);
@@ -408,7 +440,7 @@ console.log(...game.scored);
 //7.
 team1 < team2 && console.log('Team 1 is more likely to win');
 team2 > team1 && console.log('Team 2 is more likely to win');
-*/
+
 
 const game = {
   team1: 'Bayern Munich',
@@ -454,8 +486,8 @@ const game = {
 // Coding Challenge #2
 //.1
 
-for (const [i, scorers] of game.scored.entries()) {
-  console.log(`Goal ${i + 1}: ${scorers}`);
+for (const [i, goalScorers] of game.scored.entries()) {
+  console.log(`Goal ${i + 1}: ${goalScorers}`);
 }
 
 //.2
@@ -468,3 +500,24 @@ for (let i = 0; i < gameOdds.length; i++) {
 }
 const avgOdd = total / gameOdds.length;
 console.log(avgOdd);
+
+//.3
+
+// const team1Name = game.team1;
+// const team2Name = game.team2;
+// const teamNames = [team1Name, team2Name];
+
+// const winningTeam = Object.keys(game);
+// console.log(winningTeam);
+// const teamNames = [game.team1, game.team2];
+// const teamOdds = Object.entries(game.odds);
+
+// for (const winningOdds of teamOdds) {
+//   const winningTeam = game.odds[winningOdds] ?? '';
+// }
+
+for (const [team, odd] of Object.entries(game.odds)) {
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr}: ${odd}`);
+}
+*/

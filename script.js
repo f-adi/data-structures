@@ -49,6 +49,81 @@ const restaurant = {
 };
 
 const airline = 'TAP Air Portugal';
+
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+// Fix Capitalization In Name
+
+let passenger = 'jOnAS'; //Jonas
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+// Comparing Emails
+const email = 'hello@jonas.io';
+const loginEmail = '  Hello@Jonas.Io \n';
+
+// const lowerEmail = loginEmail.toLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
+
+// Replacing Strings
+
+const priceGB = '288,97£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement =
+  'All passengers come to boarding door 23. Boarding door 23!';
+// console.log(announcement.replaceAll('door', 'gate'));
+
+console.log(announcement.replaceAll(/door/g, 'gate'));
+
+//Booleans
+
+const plane = 'Airbus A320neo';
+console.log(plane.includes('A320'));
+console.log(plane.includes('Boeing'));
+console.log(plane.startsWith('Aib'));
+
+if (plane.startsWith('Airbus') && plane.endsWith('neo'))
+  console.log('Part of the new Airbus family');
+
+// Practice Exercise
+
+const checkBaggage = function (items) {
+  const baggage = items;
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are not allowed onboard');
+  } else {
+    console.log('Welcome aboard!');
+  }
+};
+
+checkBaggage('I have a laptop, some food, and a pocket Knife');
+checkBaggage('I have some socks and a camera');
+checkBaggage('Got some snacks and a gun for protection');
+
+// const fixCapitalization = function (passenger) {
+//   let passengerLower = passenger.toLowerCase();
+//   let passengerCorrect =
+//     passengerLower[0].toUpperCase() + passengerLower.slice(1);
+//   console.log(passengerCorrect);
+// };
+
+// fixCapitalization(passenger);
+
+// passenger = 'FaDi';
+// fixCapitalization(passenger);
+
+/*
+/////////////////// Working With Strings Part 1 /////////////////////////////////////////////////
+const airline = 'TAP Air Portugal';
 const plane = 'A320';
 
 console.log(plane[0]);
